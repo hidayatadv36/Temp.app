@@ -1,14 +1,17 @@
-normal_temp=99
-high_temp=100
-very_high_temp=103
 
-temp=106
+import streamlit as st
 
-if temp<=normal_temp:
-    print("temp is normal")
-elif temp>=very_high_temp:
-    print("temp is extremely high")
-elif temp>=high_temp:
-    print("temp is high")
+normal_temp = 90
+high_temp = 100
+very_high_temp = 103
+
+temp = st.number_input("Enter temperature", value=106)
+
+if temp <= normal_temp:
+    st.success("Temp is normal")
+elif temp >= very_high_temp:
+    st.error("Temp is extremely high")
+elif temp >= high_temp:
+    st.warning("Temp is high")
 else:
-    print("warning")
+    st.warning("Warning")
